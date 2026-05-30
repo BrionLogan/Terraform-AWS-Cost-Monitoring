@@ -81,7 +81,8 @@ This project addresses that challenge by creating an automated cost monitoring s
 
 ### 📧 SNS Email Subscription
 
-<img width="2040" height="1694" alt="image" src="https://github.com/user-attachments/assets/330b526e-f02f-4571-93f5-9953e3cc616d" />
+<img width="2040" height="1694" alt="image" src="https://github.com/user-attachments/assets/89459d76-ae76-42bb-bb42-d4142980332c" />
+
 
 
 ### 📊 CloudWatch Billing Alarm
