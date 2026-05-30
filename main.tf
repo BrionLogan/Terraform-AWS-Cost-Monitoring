@@ -39,3 +39,20 @@ resource "aws_budgets_budget" "monthly_budget" {
     subscriber_sns_topic_arns = [aws_sns_topic.billing_alerts.arn]
   }
 }
+
+resource "aws_cloudwatch_metric_alarm" "estimated_charges" {
+  alarm_name          = "estimated-aws-charges"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 1
+  metric_name         = "EstimatedCharges"
+  namespace           = "AWS/Billing"
+  period              = 21600
+  statistic           = "Maximum"
+  threshold           = var.monthly_budget_amount
+  alarm_description   = "Triggers when estimated AWS charges exceed budget threshold"
+  alarm_actions       = [aws_sns_topic.billing_alerts.arn]
+
+  dimensions = {
+    Currency = "USD"
+  }
+}
